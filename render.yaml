@@ -3,7 +3,7 @@ services:
     name: mintanchor
     env: node
     plan: free
-    buildCommand: npm install && npx playwright@1.57.0 install chromium
+    buildCommand: npm install
     startCommand: npm run serve
     envVars:
       - key: DEMO_PRIVATE_KEY

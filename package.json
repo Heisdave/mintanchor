@@ -1,1 +1,27 @@
-{"author":"","dependencies":{"ethers":"^6.17.0","playwright-core":"^1.57.0","solc":"^0.8.30"},"description":"MintAnchor: stress-test MUSD positions and loops on Mezo testnet before real money is at stake. Position X-Ray, a crash slider, a loop simulator, an on-chain risk snapshot registry, and shareable risk cards.","devDependencies":{"@types/node":"^24.19.2","tsx":"^4.23.15","typescript":"^5.9.3"},"keywords":[],"license":"ISC","name":"mezo-risk-lab","private":"true","scripts":{"compile":"tsx scripts/compile.ts","deploy":"tsx scripts/deploy.ts","serve":"tsx src/server.ts","typecheck":"tsc --noEmit"},"type":"module","version":"0.1.0"}
+{
+  "author": "",
+  "dependencies": {
+    "ethers": "^6.17.0",
+    "playwright-core": "^1.57.0",
+    "solc": "^0.8.30"
+  },
+  "description": "MintAnchor: stress-test MUSD positions and loops on Mezo testnet before real money is at stake. Position X-Ray, a crash slider, a loop simulator, an on-chain risk snapshot registry, and shareable risk cards.",
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "name": "mezo-risk-lab",
+  "private": "true",
+  "scripts": {
+    "compile": "tsx scripts/compile.ts",
+    "deploy": "tsx scripts/deploy.ts",
+    "serve": "tsx src/server.ts",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "PLAYWRIGHT_BROWSERS_PATH=$PWD/.playwright-browsers npx playwright@1.57.0 install chromium || true"
+  },
+  "type": "module",
+  "version": "0.1.0"
+}

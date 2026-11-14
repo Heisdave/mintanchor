@@ -5,3 +5,4 @@ artifacts/
 *.log
 
 !data/registry.json
+.playwright-browsers/
