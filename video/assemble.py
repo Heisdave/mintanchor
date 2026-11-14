@@ -189,8 +189,11 @@ def main():
         amix_in.append(f"[a{i}]")
     filters.append("".join(amix_in) +
                    f"amix=inputs=7:duration=longest:normalize=0[aout]")
+    # Loudness: the raw voice lines sit near -27 dB mean, quiet on
+    # phones. Normalise the mix to web levels.
+    filters.append("[aout]loudnorm=I=-14:TP=-1.5:LRA=11[aout2]")
     cmd += ["-filter_complex", ";".join(filters),
-            "-map", "[vout]", "-map", "[aout]",
+            "-map", "[vout]", "-map", "[aout2]",
             "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p",
             "-c:a", "aac", "-b:a", "160k", "-t", f"{total:.2f}",
             "-movflags", "+faststart", str(OUT)]
