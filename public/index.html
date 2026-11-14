@@ -181,7 +181,7 @@
           <input type="number" id="lpCount" value="3" min="0" max="10" step="1">
         </label>
       </div>
-      <p class="assumption">Honest label: the simulator treats MUSD at exactly 1 dollar and swaps at the live BTC price with no slippage and no fees. Interest is excluded; at Mezo's current 1% APR it is small next to price risk inside a stress horizon. Real loops will differ.</p>
+      <p class="assumption">Honest label: the simulator treats MUSD at exactly 1 dollar and swaps at the live BTC price with no slippage and no fees. Interest is excluded; Mezo's fixed rate is currently 1%, with initial rates ranging from 1 to 5%, small next to price risk inside a stress horizon. Real loops will differ.</p>
       <div class="outputs" id="lpOutputs"></div>
       <div class="rowline" style="margin-top:14px">
         <span id="lpRating"></span>
@@ -223,7 +223,7 @@
 <footer>
   <div class="wrap">
     <p class="mono" style="color:var(--red)">Mezo testnet only · No real funds</p>
-    <p>MintAnchor runs entirely on Mezo testnet (chain 31611). Positions are read live from Mezo Borrow contracts. Stress tests and loop simulations are illustrations built on the live price and Mezo's published borrow terms (110% minimum collateral ratio, 150% critical ratio, 1% fixed APR at time of writing). They are not financial advice and they are not a promise about any real position.</p>
+    <p>MintAnchor runs entirely on Mezo testnet (chain 31611). Positions are read live from Mezo Borrow contracts. Stress tests and loop simulations are illustrations built on the live price and Mezo's published borrow terms (110% minimum collateral ratio, 150% critical ratio, fixed APR currently 1%, initial rates 1 to 5%). They are not financial advice and they are not a promise about any real position.</p>
     <p>@heisdave01 / DEXTER WEB3</p>
   </div>
 </footer>

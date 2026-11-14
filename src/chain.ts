@@ -33,6 +33,8 @@ const troveManager = new ethers.Contract(
 );
 
 function loadDemoKey(): string | null {
+  const fromEnv = process.env.DEMO_PRIVATE_KEY;
+  if (fromEnv && /^0x[0-9a-fA-F]{64}$/.test(fromEnv.trim())) return fromEnv.trim();
   const envPath = join(root, ".env");
   if (!existsSync(envPath)) return null;
   const m = readFileSync(envPath, "utf8").match(/DEMO_PRIVATE_KEY=(0x[0-9a-fA-F]{64})/);
