@@ -2,6 +2,8 @@
 
 Test your MUSD loan before BTC tests it for you.
 
+Live site: https://mintanchor.onrender.com
+
 MintAnchor is an interactive website on Mezo testnet for anyone
 borrowing, or thinking about borrowing, MUSD against Bitcoin on Mezo.
 It reads live positions from Mezo Borrow, lets you crash the BTC
@@ -10,8 +12,7 @@ saves risk snapshots to a small on-chain registry, and turns any
 result into a shareable card for X.
 
 Built for the Mezo Buildathon Wave 2 (Tracks 1 and 2). The product
-name lives in one constant, `BRAND` in `src/config.ts`, and is
-pending a final decision.
+name lives in one constant, `BRAND` in `src/config.ts`.
 
 ## What it does
 
@@ -66,8 +67,10 @@ npm run deploy         # deploys RiskRegistry with the demo wallet
 The demo wallet needs a little testnet BTC for gas from
 https://faucet.test.mezo.org/ first. `npm run deploy` checks the
 balance, says so plainly if it is zero, and records a successful
-deployment in `data/registry.json`. Until then the site shows saves
-as paused, in the open.
+deployment in `data/registry.json`. The registry is already
+deployed (address in the contracts table below) and snapshot
+saves are live; these commands are only needed to deploy a
+fresh registry.
 
 Checks:
 
@@ -80,7 +83,7 @@ npx tsx scripts/smoke.ts   # risk math pinned to hand-computed values
 
 - **Live from chain:** trove collateral, debt and status
   (TroveManager), BTC price (PriceFeed), system collateral ratio,
-  block number, saved snapshots (RiskRegistry, once deployed).
+  block number, saved snapshots (RiskRegistry).
 - **Illustrated:** the crash slider and the loop simulator. They run
   real arithmetic on the live price and Mezo's published borrow
   terms; they do not open, move or close any position, and the page
@@ -95,11 +98,11 @@ npx tsx scripts/smoke.ts   # risk math pinned to hand-computed values
 | BorrowerOperations | 0xCdF7028ceAB81fA0C6971208e83fa7872994beE5 |
 | TroveManager | 0xE47c80e8c23f6B4A1aE41c34837a0599D5D16bb0 |
 | PriceFeed | 0x86bCF0841622a5dAC14A313a15f96A95421b9366 |
-| RiskRegistry (ours) | pending deployment, see BUILD_NOTES.md |
+| RiskRegistry (ours) | 0x378c46B4392B3Cdb194F97Ee78F9308a8E75db3F |
 
 Borrow terms used (Mezo's published docs): 110% minimum collateral
-ratio, 150% critical collateral ratio, fixed interest currently 1%
-APR, minimum loan 1,800 MUSD.
+ratio, 150% critical collateral ratio, fixed APR currently 1%
+(initial rates range from 1 to 5%), minimum loan 1,800 MUSD.
 
 ## Layout
 

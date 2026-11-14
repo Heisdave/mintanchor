@@ -173,3 +173,33 @@ MUSD loans and loops on Mezo), then the name, then the tagline, so the
 name never has to carry the old Anchor Protocol association on its
 own. Tagline, locked: "Stress-test your MUSD position before the
 market does."
+
+## Addendum (2026-11-14): deployed, named, public, hosted
+
+Added later the same day, after the notes above were written. The
+"deployment blocked", "not deployed yet" and "brand name is not
+final" passages above describe the state at build time and are
+historical; this addendum is the current state.
+
+- The demo wallet was funded from the Mezo faucet and
+  contracts/RiskRegistry.sol was deployed to Mezo testnet at
+  0x378c46B4392B3Cdb194F97Ee78F9308a8E75db3F (deploy tx
+  0x1999d40bcda239ac67eb23442f57ab6ef982b6afb1cc344508fa9dd9f9f856b5).
+- Snapshot saves were proven end to end through the deployed
+  registry, each read back from the contract afterwards: a
+  verification save (240% ratio, $27,500 liquidation price, tx
+  0x866b41b13b6aa2f43bfc0a197d2e03a19297b5dd956951ed6595401dccdf69d4)
+  and a second save filmed for the pitch video (label "Pitch
+  check: 2 BTC loan", 268.54% ratio, $27,500 liquidation price,
+  band SAFE, tx
+  0x276275a538a39c3937979d8dbea94dacc932dfdc8dfc09c833237a63b83c19c3).
+- The name question is closed: MintAnchor is locked (rename
+  section above).
+- The repo is public at https://github.com/Heisdave/mintanchor
+  and the site is hosted at https://mintanchor.onrender.com
+  (Render free tier, service name mintanchor, deploying from the
+  repo's master branch; DEMO_PRIVATE_KEY set as a private
+  environment variable on the service, never committed).
+- Borrow rate wording was made precise across the public
+  materials on the same pass: the fixed APR is currently 1%
+  (initial rates range from 1 to 5%), per Mezo's borrow guide.
