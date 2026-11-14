@@ -1,0 +1,7 @@
+{
+  "xrayText": "COLLATERAL\n7028.8591 BTC\nDEBT\n$1,376,546 MUSD\nCOLLATERAL RATIO\n34274.3%\nLIQUIDATION PRICE\n$215.43\nROOM BEFORE LIQUIDATION\n99.7% BTC drop\nRISK BAND\nSAFE\n\nLive from TroveManager on testnet at BTC $67,123.48. The position is loaded into the stress test below: drag the crash slider against the real thing.",
+  "stressText": "BTC PRICE AFTER DROP\n$32,220.00\nCOLLATERAL VALUE\n$64,440\nCOLLATERAL RATIO\n128.9%\nLIQUIDATION PRICE\n$27,500.00\nSTATUS\nDANGER | This position survives a 52% BTC drop with a 128.9% ratio.",
+  "loopText": "FINAL COLLATERAL\n5.0625 BTC\nTOTAL DEBT\n$272,703 MUSD\nEFFECTIVE LEVERAGE\n5.06x\nFINAL RATIO\n124.6%\nLIQUIDATION PRICE\n$59,254.08\nSURVIVES A BTC DROP OF\n11.7% | HIGH RISK",
+  "saveText": "Saved on chain. Snapshot number 2 for the desk demo wallet. View the transaction. Saved by the desk demo wallet on Mezo testnet, as labelled. Snapshots are a public notebook entry, not a financial record.",
+  "saveTxUrl": "https://explorer.test.mezo.org/tx/0x276275a538a39c3937979d8dbea94dacc932dfdc8dfc09c833237a63b83c19c3"
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Risk card</title>
+<style>
+  :root{
+    --red:#FF004D; --magenta:#990070; --pink:#FF83A6; --amber:#FFAA00;
+    --ink:#171717; --safe:#1F9D66;
+  }
+  html,body{margin:0;padding:0;width:1200px;height:630px;overflow:hidden}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:#171717;color:#fff;position:relative}
+  .frame{position:absolute;inset:0;padding:56px 64px;background:
+    radial-gradient(900px 500px at 85% -10%, rgba(255,0,77,.45), transparent 60%),
+    radial-gradient(700px 420px at -10% 110%, rgba(153,0,112,.5), transparent 60%), #171717}
+  .kicker{font-family:ui-monospace,Menlo,Consolas,monospace;text-transform:uppercase;letter-spacing:.18em;font-size:15px;color:var(--pink)}
+  h1{font-size:64px;line-height:1.02;margin:14px 0 6px;font-weight:900;text-transform:uppercase;max-width:900px}
+  h1 .grad{background:linear-gradient(90deg,var(--red) 15%,var(--magenta) 130%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .headline{font-size:30px;font-weight:700;margin:10px 0 26px;max-width:880px}
+  .band{position:absolute;top:56px;right:64px;padding:12px 26px;border-radius:999px;font-weight:900;letter-spacing:.1em;font-size:20px;text-transform:uppercase;background:var(--red);color:#fff}
+  .band-SAFE,.band-LOW{background:var(--safe)}
+  .band-WATCH,.band-HIGH{background:var(--amber);color:var(--ink)}
+  .band-DANGER,.band-EXTREME{background:var(--red)}
+  .band-LIQUIDATED{background:#fff;color:var(--ink)}
+  .band-MODERATE{background:#2E7D5B}
+  .rows{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
+  .cell{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:18px 22px;min-width:220px}
+  .cell .k{font-family:ui-monospace,Menlo,Consolas,monospace;text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--pink)}
+  .cell .v{font-size:34px;font-weight:900;margin-top:4px}
+  .foot{position:absolute;left:64px;right:64px;bottom:44px;display:flex;justify-content:space-between;align-items:baseline}
+  .foot .wm{font-weight:800;font-size:18px}
+  .foot .note{font-size:15px;color:#C9C9CE}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="kicker" id="brandLine">MintAnchor · Mezo Testnet</div>
+  <div class="band" id="band">…</div>
+  <h1>Mint<span class="grad">Anchor</span></h1>
+  <div class="headline" id="headline">…</div>
+  <div class="rows" id="rows"></div>
+  <div class="foot">
+    <span class="wm">@heisdave01 / DEXTER WEB3</span>
+    <span class="note">Testnet illustration. Not financial advice.</span>
+  </div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const kind = q.get("kind") || "Result";
+  document.getElementById("brandLine").textContent = "MintAnchor · " + kind + " · Mezo Testnet";
+  const band = q.get("band") || "";
+  const bandEl = document.getElementById("band");
+  bandEl.textContent = band;
+  bandEl.className = "band band-" + band;
+  document.getElementById("headline").textContent = q.get("headline") || "";
+  let rows = [];
+  try { rows = JSON.parse(q.get("rows") || "[]"); } catch (e) { rows = []; }
+  const wrap = document.getElementById("rows");
+  for (const r of rows) {
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    const k = document.createElement("div"); k.className = "k"; k.textContent = r.k;
+    const v = document.createElement("div"); v.className = "v"; v.textContent = r.v;
+    cell.appendChild(k); cell.appendChild(v); wrap.appendChild(cell);
+  }
+</script>
+</body>
+</html>

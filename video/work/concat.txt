@@ -1,0 +1,7 @@
+file '/home/hatch/workspace/projects/mezo-risk-lab/video/segments/scene1.mp4'
+file '/home/hatch/workspace/projects/mezo-risk-lab/video/segments/scene2.mp4'
+file '/home/hatch/workspace/projects/mezo-risk-lab/video/segments/scene3.mp4'
+file '/home/hatch/workspace/projects/mezo-risk-lab/video/segments/scene4.mp4'
+file '/home/hatch/workspace/projects/mezo-risk-lab/video/segments/scene5.mp4'
+file '/home/hatch/workspace/projects/mezo-risk-lab/video/segments/scene6.mp4'
+file '/home/hatch/workspace/projects/mezo-risk-lab/video/segments/scene7.mp4'

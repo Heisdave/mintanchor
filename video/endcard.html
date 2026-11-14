@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MintAnchor</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px; height: 720px; background: #FFFFFF; color: #171717;
+    font-family: Arial, "DejaVu Sans", sans-serif; position: relative;
+    overflow: hidden;
+  }
+  .kicker {
+    position: absolute; top: 54px; left: 72px;
+    font-family: "DejaVu Sans Mono", monospace; font-size: 19px;
+    letter-spacing: 2px; color: #FF004D; font-weight: bold;
+  }
+  .rule {
+    position: absolute; top: 96px; left: 72px; width: 180px; height: 6px;
+    background: linear-gradient(90deg, #FF004D, #990070);
+  }
+  h1 { position: absolute; top: 168px; left: 72px; font-size: 118px; letter-spacing: -2px; }
+  h1 .grad {
+    background: linear-gradient(90deg, #FF004D 15%, #990070 104%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .tagline {
+    position: absolute; top: 330px; left: 72px; width: 1060px;
+    font-size: 47px; line-height: 1.25; font-weight: bold; color: #171717;
+  }
+  .tagline b { color: #FF004D; }
+  .honest {
+    position: absolute; top: 520px; left: 72px; width: 1000px;
+    font-size: 22px; line-height: 1.5; color: #555555;
+  }
+  .wm {
+    position: absolute; right: 56px; bottom: 40px;
+    font-family: "DejaVu Sans Mono", monospace; font-size: 20px; color: #8a8a8a;
+  }
+  .chain {
+    position: absolute; left: 72px; bottom: 118px;
+    font-family: "DejaVu Sans Mono", monospace; font-size: 20px; color: #8a8a8a;
+  }
+</style>
+</head>
+<body>
+  <div class="kicker">MEZO BUILDATHON · WAVE 2 · TRACKS 1 AND 2</div>
+  <div class="rule"></div>
+  <h1>Mint<span class="grad">Anchor</span></h1>
+  <p class="tagline">Stress-test your MUSD position <b>before the market does.</b></p>
+  <p class="honest">Live on Mezo testnet. Positions read from the chain, snapshots
+  saved on chain, risk rehearsed before real money moves.</p>
+  <div class="chain">MEZO TESTNET · CHAIN 31611 · NO REAL FUNDS · NOT FINANCIAL ADVICE</div>
+  <div class="wm">@heisdave01 / DEXTER WEB3</div>
+</body>
+</html>
