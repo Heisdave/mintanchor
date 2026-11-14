@@ -23,29 +23,29 @@ OUT = Path.home() / "workspace/goals/mezo-buildathon-wave-2-submission/files/min
 # Tail after each narration line, per scene. Scene duration is
 # narration duration plus tail; matches the filmed targets, with
 # scene 4 extended for the corrected loop line.
-TAILS = [1.6, 2.05, 2.35, 1.75, 2.95, 2.6, 2.45]
+TAILS = [1.3, 2.05, 2.25, 1.75, 2.95, 2.2, 2.15]
 VO_LEAD = 0.35  # voice starts this far into each scene
 
 CHUNKS = [
     ["Most borrowers meet their liquidation line",
-     "on the worst possible day:",
-     "the day the market finds it for them.",
+     "on the worst possible day.",
+     "The day the market finds it for them.",
      "MintAnchor lets you find it first."],
-    ["Paste any Mezo address.",
-     "The X-Ray reads the live trove",
-     "from the chain itself:",
-     "over seven thousand bitcoin of collateral,",
-     "nearly one point four million MUSD of debt,",
-     "and a liquidation price",
+    ["Enter any Mezo address.",
+     "The X-Ray reads the live trove.",
+     "Straight from the chain itself.",
+     "Over seven thousand bitcoin of collateral.",
+     "Nearly one point four million MUSD of debt.",
+     "And a liquidation price",
      "of two hundred fifteen dollars."],
     ["Or build your own position.",
      "Two bitcoin against fifty thousand MUSD.",
-     "Now drag the price down,",
-     "and watch the band fall with it:",
-     "safe, then watch, then danger,",
-     "closing on the one hundred ten percent line."],
-    ["Looping multiplies everything:",
-     "the gains and the risk together.",
+     "Now drag the price down.",
+     "Watch the band fall with it.",
+     "Safe. Then watch. Then danger.",
+     "Closing on the one hundred ten percent line."],
+    ["Looping multiplies everything.",
+     "The gains and the risk together.",
      "Four loops at fifty percent each.",
      "Leverage over five times.",
      "Liquidation just twelve percent",
@@ -54,23 +54,24 @@ CHUNKS = [
      "Rehearsed here, before any real loan."],
     ["A check you cannot find again",
      "is just a rumour.",
-     "So save it on chain:",
-     "ratio, liquidation price, band and label,",
-     "written to the MintAnchor registry",
+     "So save it on chain.",
+     "The ratio. The liquidation price.",
+     "The band and the label.",
+     "Written to the MintAnchor registry",
      "on Mezo testnet.",
-     "Signed by the demo wallet,",
-     "and labelled as such."],
-    ["Every result becomes a card,",
-     "ready to share: the position,",
-     "the drop, the verdict.",
+     "Signed by the demo wallet.",
+     "And labelled as such."],
+    ["Every result becomes a card.",
+     "Ready to share.",
+     "The position. The drop. The verdict.",
      "Your risk, in one picture,",
      "watermark and all."],
     ["MintAnchor.",
      "Stress-test your MUSD position",
      "before the market does.",
      "Built for the Mezo Buildathon, Wave Two.",
-     "Live on testnet: no real funds,",
-     "and not financial advice."],
+     "Live on testnet. No real funds.",
+     "And not financial advice."],
 ]
 
 
@@ -137,7 +138,7 @@ def main():
         "ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, "
         "Alignment, MarginL, MarginR, MarginV, Encoding",
         "Style: Cap,DejaVu Sans,23,&H00FFFFFF,&H00FFFFFF,&H00000000,"
-        "&H8C000000,1,0,0,0,100,100,0,0,3,10,0,2,60,60,26,1",
+        "&H00000000,1,0,0,0,100,100,0,0,1,1,0,2,60,60,26,1",
         "Style: WM,DejaVu Sans Mono,15,&H00A8A8A8,&H00A8A8A8,&H66000000,"
         "&H00000000,0,0,0,0,100,100,0,0,1,1,0,9,10,22,14,1",
         "",
@@ -145,6 +146,7 @@ def main():
         "Format: Layer, Start, End, Style, Name, MarginL, MarginR, "
         "MarginV, Effect, Text",
     ]
+    chunk_events = []
     for i in range(7):
         lines.append(
             f"Dialogue: 0,{ass_time(starts[i])},{ass_time(starts[i] + scene_durs[i])},"
@@ -157,16 +159,29 @@ def main():
             cd = vo_durs[i] * w / wsum
             lines.append(
                 f"Dialogue: 1,{ass_time(ct)},{ass_time(ct + cd)},Cap,,0,0,0,,{c}")
+            chunk_events.append((ct, ct + cd, c))
             ct += cd
     ass = WORK / "captions.ass"
     ass.write_text("\n".join(lines) + "\n")
+
+    # Caption backgrounds: this libass build renders BorderStyle 3
+    # boxes fully opaque whatever alpha the style carries, so the
+    # dark, see-through background Dexter asked for is drawn as a
+    # translucent drawbox under each caption chunk instead.
+    boxes = []
+    for s, e, text in chunk_events:
+        wpx = min(1100, int(len(text) * 12.3) + 44)
+        boxes.append(
+            f"drawbox=x=(iw-{wpx})/2:y=656:w={wpx}:h=54:"
+            f"color=black@0.55:t=fill:enable='between(t\\,{s:.2f}\\,{e:.2f})'")
+    box_chain = ",".join(boxes)
 
     # 4. Final mix: captions burned in, voice lines delayed to
     # their scene starts.
     cmd = ["ffmpeg", "-y", "-i", str(concat)]
     for i in range(7):
         cmd += ["-i", str(VO / f"line{i + 1}.mp3")]
-    filters = ["[0:v]subtitles=captions.ass[vout]"]
+    filters = [f"[0:v]{box_chain}[vbg]", "[vbg]subtitles=captions.ass[vout]"]
     amix_in = []
     for i in range(7):
         ms = int((starts[i] + VO_LEAD) * 1000)

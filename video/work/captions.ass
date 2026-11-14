@@ -5,59 +5,60 @@ PlayResY: 720
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,DejaVu Sans,23,&H00FFFFFF,&H00FFFFFF,&H00000000,&H8C000000,1,0,0,0,100,100,0,0,3,10,0,2,60,60,26,1
+Style: Cap,DejaVu Sans,23,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,1,0,2,60,60,26,1
 Style: WM,DejaVu Sans Mono,15,&H00A8A8A8,&H00A8A8A8,&H66000000,&H00000000,0,0,0,0,100,100,0,0,1,1,0,9,10,22,14,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:11.01,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
+Dialogue: 0,0:00:00.00,0:00:10.71,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
 Dialogue: 1,0:00:00.35,0:00:03.19,Cap,,0,0,0,,Most borrowers meet their liquidation line
-Dialogue: 1,0:00:03.19,0:00:04.95,Cap,,0,0,0,,on the worst possible day:
-Dialogue: 1,0:00:04.95,0:00:07.46,Cap,,0,0,0,,the day the market finds it for them.
+Dialogue: 1,0:00:03.19,0:00:04.95,Cap,,0,0,0,,on the worst possible day.
+Dialogue: 1,0:00:04.95,0:00:07.46,Cap,,0,0,0,,The day the market finds it for them.
 Dialogue: 1,0:00:07.46,0:00:09.76,Cap,,0,0,0,,MintAnchor lets you find it first.
-Dialogue: 0,0:00:11.01,0:00:28.61,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
-Dialogue: 1,0:00:11.36,0:00:13.03,Cap,,0,0,0,,Paste any Mezo address.
-Dialogue: 1,0:00:13.03,0:00:15.21,Cap,,0,0,0,,The X-Ray reads the live trove
-Dialogue: 1,0:00:15.21,0:00:16.81,Cap,,0,0,0,,from the chain itself:
-Dialogue: 1,0:00:16.81,0:00:19.86,Cap,,0,0,0,,over seven thousand bitcoin of collateral,
-Dialogue: 1,0:00:19.86,0:00:22.99,Cap,,0,0,0,,nearly one point four million MUSD of debt,
-Dialogue: 1,0:00:22.99,0:00:24.66,Cap,,0,0,0,,and a liquidation price
-Dialogue: 1,0:00:24.66,0:00:26.91,Cap,,0,0,0,,of two hundred fifteen dollars.
-Dialogue: 0,0:00:28.61,0:00:47.62,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
-Dialogue: 1,0:00:28.96,0:00:31.24,Cap,,0,0,0,,Or build your own position.
-Dialogue: 1,0:00:31.24,0:00:34.62,Cap,,0,0,0,,Two bitcoin against fifty thousand MUSD.
-Dialogue: 1,0:00:34.62,0:00:36.65,Cap,,0,0,0,,Now drag the price down,
-Dialogue: 1,0:00:36.65,0:00:39.36,Cap,,0,0,0,,and watch the band fall with it:
-Dialogue: 1,0:00:39.36,0:00:41.90,Cap,,0,0,0,,safe, then watch, then danger,
-Dialogue: 1,0:00:41.90,0:00:45.62,Cap,,0,0,0,,closing on the one hundred ten percent line.
-Dialogue: 0,0:00:47.62,0:01:07.73,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
-Dialogue: 1,0:00:47.97,0:00:50.38,Cap,,0,0,0,,Looping multiplies everything:
-Dialogue: 1,0:00:50.38,0:00:52.94,Cap,,0,0,0,,the gains and the risk together.
-Dialogue: 1,0:00:52.94,0:00:55.59,Cap,,0,0,0,,Four loops at fifty percent each.
-Dialogue: 1,0:00:55.59,0:00:57.59,Cap,,0,0,0,,Leverage over five times.
-Dialogue: 1,0:00:57.59,0:01:00.08,Cap,,0,0,0,,Liquidation just twelve percent
-Dialogue: 1,0:01:00.08,0:01:01.76,Cap,,0,0,0,,below the live price.
-Dialogue: 1,0:01:01.76,0:01:03.36,Cap,,0,0,0,,One bad day ends it.
-Dialogue: 1,0:01:03.36,0:01:06.33,Cap,,0,0,0,,Rehearsed here, before any real loan.
-Dialogue: 0,0:01:07.73,0:01:27.62,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
-Dialogue: 1,0:01:08.08,0:01:10.49,Cap,,0,0,0,,A check you cannot find again
-Dialogue: 1,0:01:10.49,0:01:11.90,Cap,,0,0,0,,is just a rumour.
-Dialogue: 1,0:01:11.90,0:01:13.56,Cap,,0,0,0,,So save it on chain:
-Dialogue: 1,0:01:13.56,0:01:16.97,Cap,,0,0,0,,ratio, liquidation price, band and label,
-Dialogue: 1,0:01:16.97,0:01:19.79,Cap,,0,0,0,,written to the MintAnchor registry
-Dialogue: 1,0:01:19.79,0:01:21.12,Cap,,0,0,0,,on Mezo testnet.
-Dialogue: 1,0:01:21.12,0:01:23.28,Cap,,0,0,0,,Signed by the demo wallet,
-Dialogue: 1,0:01:23.28,0:01:25.02,Cap,,0,0,0,,and labelled as such.
-Dialogue: 0,0:01:27.62,0:01:41.60,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
-Dialogue: 1,0:01:27.97,0:01:30.56,Cap,,0,0,0,,Every result becomes a card,
-Dialogue: 1,0:01:30.56,0:01:33.24,Cap,,0,0,0,,ready to share: the position,
-Dialogue: 1,0:01:33.24,0:01:35.28,Cap,,0,0,0,,the drop, the verdict.
-Dialogue: 1,0:01:35.28,0:01:37.68,Cap,,0,0,0,,Your risk, in one picture,
-Dialogue: 1,0:01:37.68,0:01:39.35,Cap,,0,0,0,,watermark and all.
-Dialogue: 0,0:01:41.60,0:01:57.99,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
-Dialogue: 1,0:01:41.95,0:01:42.91,Cap,,0,0,0,,MintAnchor.
-Dialogue: 1,0:01:42.91,0:01:45.52,Cap,,0,0,0,,Stress-test your MUSD position
-Dialogue: 1,0:01:45.52,0:01:47.53,Cap,,0,0,0,,before the market does.
-Dialogue: 1,0:01:47.53,0:01:51.01,Cap,,0,0,0,,Built for the Mezo Buildathon, Wave Two.
-Dialogue: 1,0:01:51.01,0:01:53.72,Cap,,0,0,0,,Live on testnet: no real funds,
-Dialogue: 1,0:01:53.72,0:01:55.89,Cap,,0,0,0,,and not financial advice.
+Dialogue: 0,0:00:10.71,0:00:30.28,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
+Dialogue: 1,0:00:11.06,0:00:12.86,Cap,,0,0,0,,Enter any Mezo address.
+Dialogue: 1,0:00:12.86,0:00:15.28,Cap,,0,0,0,,The X-Ray reads the live trove.
+Dialogue: 1,0:00:15.28,0:00:17.71,Cap,,0,0,0,,Straight from the chain itself.
+Dialogue: 1,0:00:17.71,0:00:20.99,Cap,,0,0,0,,Over seven thousand bitcoin of collateral.
+Dialogue: 1,0:00:20.99,0:00:24.36,Cap,,0,0,0,,Nearly one point four million MUSD of debt.
+Dialogue: 1,0:00:24.36,0:00:26.16,Cap,,0,0,0,,And a liquidation price
+Dialogue: 1,0:00:26.16,0:00:28.58,Cap,,0,0,0,,of two hundred fifteen dollars.
+Dialogue: 0,0:00:30.28,0:00:48.56,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
+Dialogue: 1,0:00:30.63,0:00:32.87,Cap,,0,0,0,,Or build your own position.
+Dialogue: 1,0:00:32.87,0:00:36.20,Cap,,0,0,0,,Two bitcoin against fifty thousand MUSD.
+Dialogue: 1,0:00:36.20,0:00:38.19,Cap,,0,0,0,,Now drag the price down.
+Dialogue: 1,0:00:38.19,0:00:40.52,Cap,,0,0,0,,Watch the band fall with it.
+Dialogue: 1,0:00:40.52,0:00:43.01,Cap,,0,0,0,,Safe. Then watch. Then danger.
+Dialogue: 1,0:00:43.01,0:00:46.66,Cap,,0,0,0,,Closing on the one hundred ten percent line.
+Dialogue: 0,0:00:48.56,0:01:09.82,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
+Dialogue: 1,0:00:48.91,0:00:51.47,Cap,,0,0,0,,Looping multiplies everything.
+Dialogue: 1,0:00:51.47,0:00:54.19,Cap,,0,0,0,,The gains and the risk together.
+Dialogue: 1,0:00:54.19,0:00:57.00,Cap,,0,0,0,,Four loops at fifty percent each.
+Dialogue: 1,0:00:57.00,0:00:59.13,Cap,,0,0,0,,Leverage over five times.
+Dialogue: 1,0:00:59.13,0:01:01.78,Cap,,0,0,0,,Liquidation just twelve percent
+Dialogue: 1,0:01:01.78,0:01:03.57,Cap,,0,0,0,,below the live price.
+Dialogue: 1,0:01:03.57,0:01:05.27,Cap,,0,0,0,,One bad day ends it.
+Dialogue: 1,0:01:05.27,0:01:08.42,Cap,,0,0,0,,Rehearsed here, before any real loan.
+Dialogue: 0,0:01:09.82,0:01:29.86,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
+Dialogue: 1,0:01:10.17,0:01:12.43,Cap,,0,0,0,,A check you cannot find again
+Dialogue: 1,0:01:12.43,0:01:13.76,Cap,,0,0,0,,is just a rumour.
+Dialogue: 1,0:01:13.76,0:01:15.32,Cap,,0,0,0,,So save it on chain.
+Dialogue: 1,0:01:15.32,0:01:17.89,Cap,,0,0,0,,The ratio. The liquidation price.
+Dialogue: 1,0:01:17.89,0:01:19.69,Cap,,0,0,0,,The band and the label.
+Dialogue: 1,0:01:19.69,0:01:22.34,Cap,,0,0,0,,Written to the MintAnchor registry
+Dialogue: 1,0:01:22.34,0:01:23.59,Cap,,0,0,0,,on Mezo testnet.
+Dialogue: 1,0:01:23.59,0:01:25.62,Cap,,0,0,0,,Signed by the demo wallet.
+Dialogue: 1,0:01:25.62,0:01:27.26,Cap,,0,0,0,,And labelled as such.
+Dialogue: 0,0:01:29.86,0:01:41.85,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
+Dialogue: 1,0:01:30.21,0:01:32.44,Cap,,0,0,0,,Every result becomes a card.
+Dialogue: 1,0:01:32.44,0:01:33.63,Cap,,0,0,0,,Ready to share.
+Dialogue: 1,0:01:33.63,0:01:36.50,Cap,,0,0,0,,The position. The drop. The verdict.
+Dialogue: 1,0:01:36.50,0:01:38.57,Cap,,0,0,0,,Your risk, in one picture,
+Dialogue: 1,0:01:38.57,0:01:40.00,Cap,,0,0,0,,watermark and all.
+Dialogue: 0,0:01:41.85,0:01:58.52,WM,,0,0,0,,@heisdave01 / DEXTER WEB3
+Dialogue: 1,0:01:42.20,0:01:43.20,Cap,,0,0,0,,MintAnchor.
+Dialogue: 1,0:01:43.20,0:01:45.92,Cap,,0,0,0,,Stress-test your MUSD position
+Dialogue: 1,0:01:45.92,0:01:48.01,Cap,,0,0,0,,before the market does.
+Dialogue: 1,0:01:48.01,0:01:51.64,Cap,,0,0,0,,Built for the Mezo Buildathon, Wave Two.
+Dialogue: 1,0:01:51.64,0:01:54.45,Cap,,0,0,0,,Live on testnet. No real funds.
+Dialogue: 1,0:01:54.45,0:01:56.72,Cap,,0,0,0,,And not financial advice.
