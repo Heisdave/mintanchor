@@ -56,12 +56,32 @@ function publicFile(name: string): string {
 let browserPromise: Promise<Browser> | null = null;
 
 function findChromium(): string | null {
-  const cache = join(homedir(), ".cache", "ms-playwright");
-  if (!existsSync(cache)) return null;
-  for (const dir of readdirSync(cache)) {
-    if (!dir.startsWith("chromium-")) continue;
-    const candidate = join(cache, dir, "chrome-linux64", "chrome");
-    if (existsSync(candidate)) return candidate;
+  const candidates: string[] = [];
+  try {
+    candidates.push(chromium.executablePath());
+  } catch {
+    // The library cannot resolve a path here; the scan below still applies.
+  }
+  const roots = [
+    process.env.PLAYWRIGHT_BROWSERS_PATH,
+    join(homedir(), ".cache", "ms-playwright"),
+  ].filter((p): p is string => Boolean(p));
+  for (const cache of roots) {
+    if (!existsSync(cache)) continue;
+    for (const dir of readdirSync(cache)) {
+      if (!dir.startsWith("chromium")) continue;
+      for (const sub of [
+        "chrome-linux64/chrome",
+        "chrome-linux/chrome",
+        "chrome-linux64/headless_shell",
+        "chrome-linux/headless_shell",
+      ]) {
+        candidates.push(join(cache, dir, sub));
+      }
+    }
+  }
+  for (const c of candidates) {
+    if (c && existsSync(c)) return c;
   }
   return null;
 }
@@ -70,7 +90,10 @@ async function getBrowser(): Promise<Browser> {
   if (!browserPromise) {
     const executablePath = findChromium();
     if (!executablePath) throw new Error("No local Chromium found for card rendering.");
-    browserPromise = chromium.launch({ executablePath, args: ["--no-sandbox"] });
+    browserPromise = chromium.launch({
+      executablePath,
+      args: ["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"],
+    });
   }
   return browserPromise;
 }
