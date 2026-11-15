@@ -4,6 +4,10 @@ Test your MUSD loan before BTC tests it for you.
 
 Live site: https://mintanchor.onrender.com
 
+Pitch deck: [MintAnchor-Pitch-Deck.pdf](MintAnchor-Pitch-Deck.pdf)
+
+Pitch video (2 minutes): https://youtu.be/LVs8hxGm-Uw
+
 MintAnchor is an interactive website on Mezo testnet for anyone
 borrowing, or thinking about borrowing, MUSD against Bitcoin on Mezo.
 It reads live positions from Mezo Borrow, lets you crash the BTC
